@@ -1,4 +1,4 @@
-(defproject lein-ubersource "0.1.1-SNAPSHOT"
+(defproject lein-ubersource "0.1.1"
   :description "A leiningen plugin that attempts to download the source code for all of a project's (transitive) dependencies"
   :eval-in-leiningen true
   :pedantic? abort
