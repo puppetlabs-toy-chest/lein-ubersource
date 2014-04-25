@@ -9,7 +9,7 @@ __Leiningen__ ([via Clojars](https://clojars.org/lein-ubersource))
 Put the following into the `:plugins` vector of the `:user` profile in your `~/.lein/profiles.clj`:
 
 ```clojure
-[lein-ubersource "0.1.0"]
+[lein-ubersource "0.1.1"]
 ```
 
 This plugin is destined for Leiningen >= 2.0.0.
