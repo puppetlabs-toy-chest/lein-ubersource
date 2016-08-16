@@ -1,3 +1,4 @@
+#WARNING! This repo is not maintained
 # lein-ubersource
 
 A [Leiningen](https://github.com/technomancy/leiningen) plugin to download source code for all (transitive) dependencies of a project.
