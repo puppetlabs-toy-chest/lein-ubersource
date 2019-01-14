@@ -1,6 +1,5 @@
 (ns leiningen.ubersource
-  (:import (org.sonatype.aether.resolution DependencyResolutionException)
-           (java.util.zip ZipFile))
+  (:import (java.util.zip ZipFile))
   (:require [clojure.pprint :refer [pprint]]
             [cemerick.pomegranate.aether :as aether]
             [me.raynes.fs :as fs]
@@ -47,7 +46,7 @@
   (try
     (println "Looking for source jar for " dep)
     (resolve-artifact (concat dep [:classifier "sources"]) repositories)
-    (catch DependencyResolutionException ex
+    (catch java.lang.Exception ex
       nil)))
 
 (defn main-artifact

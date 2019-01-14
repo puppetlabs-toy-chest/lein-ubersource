@@ -43,13 +43,13 @@
     (delete-on-exit (apply fs/temp-dir args))))
 
 (def repositories
-  [["central" {:snapshots false, :url "http://repo1.maven.org/maven2/"}]
+  [["central" {:snapshots false, :url "https://repo1.maven.org/maven2/"}]
    ["clojars" {:url "https://clojars.org/repo/"}]])
 
 (deftest ubersource-test
   (testing "Can find all dependencies for a project (including transitive)"
     (let [deps (find-transitive-deps
-                 sample-direct-deps
+                 sample-transitive-deps
                  repositories)]
       (mapv println deps)
       (is (= sample-transitive-deps deps))))
@@ -73,7 +73,7 @@
   (testing "Downloads all sources for a project"
     (let [d       (temp-dir)
           project {:repositories repositories
-                   :dependencies sample-direct-deps
+                   :dependencies sample-transitive-deps
                    :target-path d}]
       (ubersource project)
       (doseq [dep sample-transitive-deps]
